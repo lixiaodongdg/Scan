@@ -2,8 +2,8 @@
 //  ViewController.h
 //  ScanTest
 //
-//  Created by lxd on 2017/3/16.
-//  Copyright © 2017年 888888. All rights reserved.
+//  Created by QBL on 2017/3/16.
+//  Copyright © 2017年 QBL All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

@@ -2,12 +2,12 @@
 //  AppDelegate.m
 //  ScanTest
 //
-//  Created by lxd on 2017/3/16.
-//  Copyright © 2017年 888888. All rights reserved.
+//  Created by QBL on 2017/3/16.
+//  Copyright © 2017年 QBL All rights reserved.
 //
 
 #import "AppDelegate.h"
-
+#import "ViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -16,10 +16,15 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    ViewController *viewController = [[ViewController alloc]init];
+    UINavigationController *navController = [[UINavigationController alloc]initWithRootViewController:viewController];
+    self.window.rootViewController = navController;
     return YES;
 }
-
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
