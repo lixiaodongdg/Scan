@@ -79,37 +79,6 @@
     return _scanView;
 }
 - (void)startScanning{
-    //创建会话
-    self.scanCaptureSession = [[AVCaptureSession alloc]init];
-    //获取AVCaptureDevice实例并设置defaultDeviceWithMediaType类型
-    AVCaptureDevice *avCaptureDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
-    NSError *error;
-    //初始化输入流
-    AVCaptureDeviceInput *avCaptureDeviceInput = [AVCaptureDeviceInput deviceInputWithDevice:avCaptureDevice error:&error];
-    //给会话添加输入流
-    [self.scanCaptureSession addInput:avCaptureDeviceInput];
-    //创建输出流
-    AVCaptureMetadataOutput *avCaptureMetadataOutput = [[AVCaptureMetadataOutput alloc] init];
-    //给会话添加输出流
-    [self.scanCaptureSession addOutput:avCaptureMetadataOutput];
-    //设置代理
-    [avCaptureMetadataOutput setMetadataObjectsDelegate:self queue:dispatch_get_main_queue()];
-    //先添加再设置输出的类型
-    [avCaptureMetadataOutput setMetadataObjectTypes:[NSArray arrayWithObject:AVMetadataObjectTypeQRCode]];
-    //摄像头图层显示的范围大小
-    self.avcLayer = [[AVCaptureVideoPreviewLayer alloc]initWithSession:self.scanCaptureSession];
-    [self.avcLayer setVideoGravity:AVLayerVideoGravityResizeAspectFill];
-    [self.view.layer addSublayer:self.avcLayer];
-    [self.scanCaptureSession startRunning];
-    //设置扫描的有效范围（默认是全屏，可以不设置）
-    /*
-    self.observer = [[NSNotificationCenter defaultCenter] addObserverForName:AVCaptureInputPortFormatDescriptionDidChangeNotification
-                                                      object:nil
-                                                       queue:nil
-                                                  usingBlock: ^(NSNotification *_Nonnull note) {
-                                                      avCaptureMetadataOutput.rectOfInterest = [self.avcLayer metadataOutputRectOfInterestForRect:CGRectMake(CGRectGetWidth(self.view.bounds) * 1 / 5 / 2, 80,CGRectGetWidth(self.view.bounds) * 4 / 5,CGRectGetWidth(self.view.bounds) * 4 / 5)];
-                                                  }];
-     */
     __weak typeof(self) weakSelf = self;
     self.scanView.openFlash = ^(){
         AVCaptureDevice *device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
@@ -124,7 +93,7 @@
             }
             [device unlockForConfiguration];
         }
-
+        
     };
     __block PhotoLibraryViewController *photoLibraryController;
     self.scanView.openPhotoLibrary = ^(){
@@ -160,6 +129,40 @@
         }
     };
     
+    //创建会话
+    self.scanCaptureSession = [[AVCaptureSession alloc]init];
+    //获取AVCaptureDevice实例并设置defaultDeviceWithMediaType类型
+    AVCaptureDevice *avCaptureDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+    if (!avCaptureDevice) {
+        return;
+    }
+    NSError *error;
+    //初始化输入流
+    AVCaptureDeviceInput *avCaptureDeviceInput = [AVCaptureDeviceInput deviceInputWithDevice:avCaptureDevice error:&error];
+    //给会话添加输入流
+    [self.scanCaptureSession addInput:avCaptureDeviceInput];
+    //创建输出流
+    AVCaptureMetadataOutput *avCaptureMetadataOutput = [[AVCaptureMetadataOutput alloc] init];
+    //给会话添加输出流
+    [self.scanCaptureSession addOutput:avCaptureMetadataOutput];
+    //设置代理
+    [avCaptureMetadataOutput setMetadataObjectsDelegate:self queue:dispatch_get_main_queue()];
+    //先添加再设置输出的类型
+    [avCaptureMetadataOutput setMetadataObjectTypes:[NSArray arrayWithObject:AVMetadataObjectTypeQRCode]];
+    //摄像头图层显示的范围大小
+    self.avcLayer = [[AVCaptureVideoPreviewLayer alloc]initWithSession:self.scanCaptureSession];
+    [self.avcLayer setVideoGravity:AVLayerVideoGravityResizeAspectFill];
+    [self.view.layer addSublayer:self.avcLayer];
+    [self.scanCaptureSession startRunning];
+    //设置扫描的有效范围（默认是全屏，可以不设置）
+    /*
+    self.observer = [[NSNotificationCenter defaultCenter] addObserverForName:AVCaptureInputPortFormatDescriptionDidChangeNotification
+                                                      object:nil
+                                                       queue:nil
+                                                  usingBlock: ^(NSNotification *_Nonnull note) {
+                                                      avCaptureMetadataOutput.rectOfInterest = [self.avcLayer metadataOutputRectOfInterestForRect:CGRectMake(CGRectGetWidth(self.view.bounds) * 1 / 5 / 2, 80,CGRectGetWidth(self.view.bounds) * 4 / 5,CGRectGetWidth(self.view.bounds) * 4 / 5)];
+                                                  }];
+     */
 }
 #pragma mark -AVCaptureMetadataOutputObjectsDelegate
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection{
