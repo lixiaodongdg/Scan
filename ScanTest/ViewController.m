@@ -23,7 +23,7 @@
     }
     [self addView];
 }
-- (void)addView{
+- (void)addView {
     UIButton *scanButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [scanButton setTitle:@"扫一扫" forState:UIControlStateNormal];
     [scanButton setBackgroundColor:[UIColor greenColor]];
@@ -35,7 +35,7 @@
         make.size.mas_equalTo(CGSizeMake(200, 60));
     }];
 }
-- (void)scanButonClick{
+- (void)scanButonClick {
     ScanViewController *scanViewController = [[ScanViewController alloc]init];
     scanViewController.view.backgroundColor = [UIColor whiteColor];
     [self.navigationController pushViewController:scanViewController animated:YES];
