@@ -1,0 +1,15 @@
+use_frameworks!
+
+target 'DGObjC_Example' do
+  pod 'DGObjC', :path => '../'
+  
+  
+  #第三方
+  pod 'Masonry'
+  
+  target 'DGObjC_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
