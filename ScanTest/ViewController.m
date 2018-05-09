@@ -25,7 +25,6 @@
     CustomView *customView = [[CustomView alloc] init];
     [customView logView];
     [customView log];
-    [customView test];
     [self addView];
 }
 - (void)addView {
