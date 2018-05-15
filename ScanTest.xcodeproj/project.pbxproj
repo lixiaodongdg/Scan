@@ -115,10 +115,9 @@
 		E52C900C1EB74A11004734E7 /* Scan */ = {
 			isa = PBXGroup;
 			children = (
+				E5DA7E6E20AAC2B800702819 /* ViewController */,
 				E5DA7E6D20AABEA800702819 /* View */,
 				E5DA7E6C20AAB67000702819 /* Temp */,
-				E50DCD251E82121E00CF08B0 /* PhotoLibraryViewController.h */,
-				E50DCD261E82121E00CF08B0 /* PhotoLibraryViewController.m */,
 				E5E873721E8262890068B2A9 /* PhotoShowCollectionViewCell.h */,
 				E5E873731E8262890068B2A9 /* PhotoShowCollectionViewCell.m */,
 				E584C3831E80D39F0083E8A3 /* ScanTestUIConfig.h */,
@@ -150,6 +149,15 @@
 				E5E77EB01E80EE0000EDE92A /* ScanView.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		E5DA7E6E20AAC2B800702819 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E50DCD251E82121E00CF08B0 /* PhotoLibraryViewController.h */,
+				E50DCD261E82121E00CF08B0 /* PhotoLibraryViewController.m */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		FBAF688FE82F31AF1A29214E /* Frameworks */ = {

@@ -26,6 +26,7 @@ static NSString *indentifier = @"photoIndentifier";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"Temp----viewDidLoad");
     if ([self respondsToSelector:@selector(setExtendedLayoutIncludesOpaqueBars:)]) {
         self.extendedLayoutIncludesOpaqueBars = NO;
         self.edgesForExtendedLayout = UIRectEdgeNone;
