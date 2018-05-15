@@ -9,7 +9,6 @@
 #import "ViewController.h"
 #import "Masonry.h"
 #import "ScanViewController.h"
-#import <DGObjC/CustomView.h>
 @interface ViewController ()
 
 @end
@@ -22,9 +21,9 @@
         self.extendedLayoutIncludesOpaqueBars = NO;
         self.edgesForExtendedLayout = UIRectEdgeNone;
     }
-    CustomView *customView = [[CustomView alloc] init];
-    [customView logView];
-    [customView log];
+//    CustomView *customView = [[CustomView alloc] init];
+//    [customView logView];
+//    [customView log];
     [self addView];
 }
 - (void)addView {

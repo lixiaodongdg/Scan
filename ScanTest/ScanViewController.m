@@ -34,6 +34,7 @@
     }
     self.title = @"扫一扫";
     [self startScanning];
+    NSLog(@"BBBBBBBBBBBBBBBBBBBB");
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
