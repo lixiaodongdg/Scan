@@ -45,6 +45,7 @@
 }
 - (void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
+    NSLog(@"dev----dev");
     UIDeviceOrientation currentDeviceOriTation = [UIDevice currentDevice].orientation;
     switch (currentDeviceOriTation) {
         case UIDeviceOrientationLandscapeLeft :UIDeviceOrientationLandscapeLeft:
