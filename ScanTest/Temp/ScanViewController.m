@@ -35,6 +35,8 @@
     self.title = @"扫一扫";
     [self startScanning];
     NSLog(@"BBBBBBBBBBBBBBBBBBBB");
+    NSLog(@"Temp");
+    NSLog(@"Temp1");
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];

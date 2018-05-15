@@ -115,8 +115,7 @@
 		E52C900C1EB74A11004734E7 /* Scan */ = {
 			isa = PBXGroup;
 			children = (
-				E553F99C1E7A944C0071F9D2 /* ScanViewController.h */,
-				E553F99D1E7A944C0071F9D2 /* ScanViewController.m */,
+				E5DA7E6C20AAB67000702819 /* Temp */,
 				E5E77EAF1E80EE0000EDE92A /* ScanView.h */,
 				E5E77EB01E80EE0000EDE92A /* ScanView.m */,
 				E50DCD251E82121E00CF08B0 /* PhotoLibraryViewController.h */,
@@ -134,6 +133,15 @@
 				E5B2EFF61EB8C0ED00230C0B /* Scan.gif */,
 			);
 			path = Gif;
+			sourceTree = "<group>";
+		};
+		E5DA7E6C20AAB67000702819 /* Temp */ = {
+			isa = PBXGroup;
+			children = (
+				E553F99C1E7A944C0071F9D2 /* ScanViewController.h */,
+				E553F99D1E7A944C0071F9D2 /* ScanViewController.m */,
+			);
+			path = Temp;
 			sourceTree = "<group>";
 		};
 		FBAF688FE82F31AF1A29214E /* Frameworks */ = {
