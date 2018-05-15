@@ -44,6 +44,7 @@
     [self drawMask];
     //矩形框
     [self drawScanRect];
+    NSLog(@"drawrect----Temp");
     
 }
 - (void)drawMask{
