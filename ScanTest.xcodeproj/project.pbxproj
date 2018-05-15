@@ -115,9 +115,8 @@
 		E52C900C1EB74A11004734E7 /* Scan */ = {
 			isa = PBXGroup;
 			children = (
+				E5DA7E6D20AABEA800702819 /* View */,
 				E5DA7E6C20AAB67000702819 /* Temp */,
-				E5E77EAF1E80EE0000EDE92A /* ScanView.h */,
-				E5E77EB01E80EE0000EDE92A /* ScanView.m */,
 				E50DCD251E82121E00CF08B0 /* PhotoLibraryViewController.h */,
 				E50DCD261E82121E00CF08B0 /* PhotoLibraryViewController.m */,
 				E5E873721E8262890068B2A9 /* PhotoShowCollectionViewCell.h */,
@@ -142,6 +141,15 @@
 				E553F99D1E7A944C0071F9D2 /* ScanViewController.m */,
 			);
 			path = Temp;
+			sourceTree = "<group>";
+		};
+		E5DA7E6D20AABEA800702819 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E5E77EAF1E80EE0000EDE92A /* ScanView.h */,
+				E5E77EB01E80EE0000EDE92A /* ScanView.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		FBAF688FE82F31AF1A29214E /* Frameworks */ = {
