@@ -115,7 +115,7 @@
         make.right.equalTo(self.mas_right).with.offset(-_leftEdge);
 
     }];
-
+    NSLog(@"Temp1111111111111");
     UILabel *reminderLabel = [UILabel new];
     reminderLabel.text = @"将取景框对准二维码即可自动扫描";
     reminderLabel.textAlignment = NSTextAlignmentCenter;
@@ -126,7 +126,7 @@
         make.centerX.equalTo(self.mas_centerX);
         make.size.mas_equalTo(CGSizeMake(300, 40));
     }];
-    
+    NSLog(@"Temp22222222222222");
     UIView *barView = [UIView new];
     barView.backgroundColor = [UIColor blackColor];
     [self addSubview:barView];
@@ -156,6 +156,7 @@
         make.centerX.mas_equalTo(100);
         make.size.mas_equalTo(CGSizeMake(100, 100));
     }];
+    NSLog(@"Temp333333333333333333");
 }
 - (void)lineStartAnimation{
     if (!_animationTimer) {
