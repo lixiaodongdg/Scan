@@ -156,6 +156,7 @@
         make.centerX.mas_equalTo(100);
         make.size.mas_equalTo(CGSizeMake(100, 100));
     }];
+    NSLog(@"Temp333333333333333333");
 }
 - (void)lineStartAnimation{
     if (!_animationTimer) {
