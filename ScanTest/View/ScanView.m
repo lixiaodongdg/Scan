@@ -115,7 +115,7 @@
         make.right.equalTo(self.mas_right).with.offset(-_leftEdge);
 
     }];
-
+    NSLog(@"Temp1111111111111");
     UILabel *reminderLabel = [UILabel new];
     reminderLabel.text = @"将取景框对准二维码即可自动扫描";
     reminderLabel.textAlignment = NSTextAlignmentCenter;
