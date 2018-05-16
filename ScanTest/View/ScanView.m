@@ -126,7 +126,7 @@
         make.centerX.equalTo(self.mas_centerX);
         make.size.mas_equalTo(CGSizeMake(300, 40));
     }];
-    
+    NSLog(@"Temp22222222222222");
     UIView *barView = [UIView new];
     barView.backgroundColor = [UIColor blackColor];
     [self addSubview:barView];
