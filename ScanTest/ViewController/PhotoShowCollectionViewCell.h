@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-
 @interface PhotoShowCollectionViewCell : UICollectionViewCell
 @property(nonatomic,strong)UIImageView *photoImageView;
 @property(nonatomic,strong)UIButton *selectedButton;

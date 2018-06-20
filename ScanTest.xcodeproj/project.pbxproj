@@ -16,6 +16,7 @@
 		E52B3FF91E7A78CB00320223 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E52B3FF71E7A78CB00320223 /* LaunchScreen.storyboard */; };
 		E553F99E1E7A944C0071F9D2 /* ScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E553F99D1E7A944C0071F9D2 /* ScanViewController.m */; };
 		E55E300C1E8F97E8000B26E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E55E300B1E8F97E8000B26E9 /* Assets.xcassets */; };
+		E57A698620D93255003E7506 /* BranchList.plist in Resources */ = {isa = PBXBuildFile; fileRef = E57A698420D9316F003E7506 /* BranchList.plist */; };
 		E5B2EFF71EB8C0ED00230C0B /* Scan.gif in Resources */ = {isa = PBXBuildFile; fileRef = E5B2EFF61EB8C0ED00230C0B /* Scan.gif */; };
 		E5E77EB11E80EE0000EDE92A /* ScanView.m in Sources */ = {isa = PBXBuildFile; fileRef = E5E77EB01E80EE0000EDE92A /* ScanView.m */; };
 		E5E873741E8262890068B2A9 /* PhotoShowCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5E873731E8262890068B2A9 /* PhotoShowCollectionViewCell.m */; };
@@ -39,6 +40,7 @@
 		E553F99C1E7A944C0071F9D2 /* ScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanViewController.h; sourceTree = "<group>"; };
 		E553F99D1E7A944C0071F9D2 /* ScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanViewController.m; sourceTree = "<group>"; };
 		E55E300B1E8F97E8000B26E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E57A698420D9316F003E7506 /* BranchList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BranchList.plist; sourceTree = "<group>"; };
 		E584C3831E80D39F0083E8A3 /* ScanTestUIConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScanTestUIConfig.h; sourceTree = "<group>"; };
 		E5B2EFF61EB8C0ED00230C0B /* Scan.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Scan.gif; sourceTree = "<group>"; };
 		E5E77EAF1E80EE0000EDE92A /* ScanView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanView.h; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				E52B3FF21E7A78CB00320223 /* Main.storyboard */,
 				E52B3FF71E7A78CB00320223 /* LaunchScreen.storyboard */,
 				E52B3FFA1E7A78CB00320223 /* Info.plist */,
+				E57A698420D9316F003E7506 /* BranchList.plist */,
 				E52C900C1EB74A11004734E7 /* Scan */,
 				E55E300B1E8F97E8000B26E9 /* Assets.xcassets */,
 				E52B3FE91E7A78CB00320223 /* Supporting Files */,
@@ -184,11 +187,10 @@
 			buildConfigurationList = E52B3FFD1E7A78CB00320223 /* Build configuration list for PBXNativeTarget "ScanTest" */;
 			buildPhases = (
 				5EFCFEC7941A615630DF08AA /* [CP] Check Pods Manifest.lock */,
+				E57A698020D8E261003E7506 /* ShellScript */,
 				E52B3FE21E7A78CB00320223 /* Sources */,
 				E52B3FE31E7A78CB00320223 /* Frameworks */,
 				E52B3FE41E7A78CB00320223 /* Resources */,
-				E5643F56992B9B1E30AC5E2A /* [CP] Embed Pods Frameworks */,
-				A9F02E2A6BAFCAB0F8BE3BAF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -239,6 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E52B3FF91E7A78CB00320223 /* LaunchScreen.storyboard in Resources */,
+				E57A698620D93255003E7506 /* BranchList.plist in Resources */,
 				E5B2EFF71EB8C0ED00230C0B /* Scan.gif in Resources */,
 				E55E300C1E8F97E8000B26E9 /* Assets.xcassets in Resources */,
 				E52B3FF41E7A78CB00320223 /* Main.storyboard in Resources */,
@@ -254,44 +257,30 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ScanTest-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A9F02E2A6BAFCAB0F8BE3BAF /* [CP] Copy Pods Resources */ = {
+		E57A698020D8E261003E7506 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ScanTest/Pods-ScanTest-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E5643F56992B9B1E30AC5E2A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ScanTest/Pods-ScanTest-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "#!/bin/bash\n#获取各个仓库的分支名称\n#2018.6.19\n\n#这里拿到的是当前工程的路径\nprojectPath=`pwd`\nplistPath=$projectPath/ScanTest/BranchList.plist\necho \"工程路径$projectPath\"\necho \"文件路径$plistPath\"\ncd ../..\necho \"更新后路径`pwd`\"\n\nif [ -f $plistPath ];then\n#移除文件\nrm -f $plistPath\nfi\n\n\n\n\n\n\nif [ \"${CONFIGURATION}\" = \"Release\" ];then\necho \"当前为Release模式\"\n/usr/libexec/PlistBuddy -c 'Add :Version string 1.0' $plistPath\n/usr/libexec/PlistBuddy -c 'Delete :Version' $plistPath\n\nelse\nfor file in $(ls)\ndo\nif [[ $file == DG* ]];then\ncd $file\ncurrentBranch=$(git branch | cut -d' ' -f 2 | tr -d \"\\n\")\necho \"仓库名称key=$file 仓库分支value=$currentBranch\"\n/usr/libexec/PlistBuddy -c \"Add :$file string $currentBranch\" $plistPath\ncd ..\nfi\n\n\ndone\nfi\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

@@ -1,5 +1,14 @@
+source 'https://github.com/CocoaPods/Specs'
+source 'https://github.com/lixiaodongdg/Specs'
+
 target ‘ScanTest’ do
 pod 'Masonry', '~> 1.0.2’
-pod 'DGObjC', :path => '../DGObjC'
+#两种书写形式都保留了
+#pod 'DGObjC', '3.5.0'
+pod 'DGObjC', :path => '../../DGObjC'
+pod 'DGUIKit', :path => '../../DGUIKit'
+pod 'FMDB'
+
+
 end
 

@@ -23,6 +23,13 @@
     ViewController *viewController = [[ViewController alloc]init];
     UINavigationController *navController = [[UINavigationController alloc]initWithRootViewController:viewController];
     self.window.rootViewController = navController;
+    //只有添加了引用关系后才能读取到，否则是读取不到的 但是系统自动生成的Info.plist文件无论是否有引用关系的存在(这个引用关系是指旁边Target是否勾选上)
+#ifdef DEBUG
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"BranchList" ofType:@"plist"];
+    NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:path];
+    NSLog(@"字典输出------%@----------",dic);
+#endif
+    
     return YES;
 }
 
