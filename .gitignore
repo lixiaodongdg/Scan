@@ -67,4 +67,4 @@ iOSInjectionProject/
 .idea
 
 # Scan
-ScanTest/ABranchList.plist
+ScanTest/BranchList.plist

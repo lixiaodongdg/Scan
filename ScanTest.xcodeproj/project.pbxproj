@@ -16,6 +16,7 @@
 		E52B3FF91E7A78CB00320223 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E52B3FF71E7A78CB00320223 /* LaunchScreen.storyboard */; };
 		E553F99E1E7A944C0071F9D2 /* ScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E553F99D1E7A944C0071F9D2 /* ScanViewController.m */; };
 		E55E300C1E8F97E8000B26E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E55E300B1E8F97E8000B26E9 /* Assets.xcassets */; };
+		E585CB8020DA517C0089F2B7 /* BranchList.plist in Resources */ = {isa = PBXBuildFile; fileRef = E585CB7F20DA517C0089F2B7 /* BranchList.plist */; };
 		E5B2EFF71EB8C0ED00230C0B /* Scan.gif in Resources */ = {isa = PBXBuildFile; fileRef = E5B2EFF61EB8C0ED00230C0B /* Scan.gif */; };
 		E5E77EB11E80EE0000EDE92A /* ScanView.m in Sources */ = {isa = PBXBuildFile; fileRef = E5E77EB01E80EE0000EDE92A /* ScanView.m */; };
 		E5E873741E8262890068B2A9 /* PhotoShowCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5E873731E8262890068B2A9 /* PhotoShowCollectionViewCell.m */; };
@@ -40,6 +41,7 @@
 		E553F99D1E7A944C0071F9D2 /* ScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanViewController.m; sourceTree = "<group>"; };
 		E55E300B1E8F97E8000B26E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E584C3831E80D39F0083E8A3 /* ScanTestUIConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScanTestUIConfig.h; sourceTree = "<group>"; };
+		E585CB7F20DA517C0089F2B7 /* BranchList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BranchList.plist; sourceTree = "<group>"; };
 		E5B2EFF61EB8C0ED00230C0B /* Scan.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Scan.gif; sourceTree = "<group>"; };
 		E5E77EAF1E80EE0000EDE92A /* ScanView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanView.h; sourceTree = "<group>"; };
 		E5E77EB01E80EE0000EDE92A /* ScanView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanView.m; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				E52B3FF21E7A78CB00320223 /* Main.storyboard */,
 				E52B3FF71E7A78CB00320223 /* LaunchScreen.storyboard */,
 				E52B3FFA1E7A78CB00320223 /* Info.plist */,
+				E585CB7F20DA517C0089F2B7 /* BranchList.plist */,
 				E52C900C1EB74A11004734E7 /* Scan */,
 				E55E300B1E8F97E8000B26E9 /* Assets.xcassets */,
 				E52B3FE91E7A78CB00320223 /* Supporting Files */,
@@ -239,6 +242,7 @@
 			files = (
 				E52B3FF91E7A78CB00320223 /* LaunchScreen.storyboard in Resources */,
 				E5B2EFF71EB8C0ED00230C0B /* Scan.gif in Resources */,
+				E585CB8020DA517C0089F2B7 /* BranchList.plist in Resources */,
 				E55E300C1E8F97E8000B26E9 /* Assets.xcassets in Resources */,
 				E52B3FF41E7A78CB00320223 /* Main.storyboard in Resources */,
 			);
@@ -276,7 +280,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#!/bin/bash\n#获取各个仓库的分支名称\n#2018.6.19\n\n#这里拿到的是当前工程的路径\nprojectPath=`pwd`\nplistPath=$projectPath/ScanTest/ABranchList.plist\necho \"工程路径$projectPath\"\necho \"文件路径$plistPath\"\ncd ../..\necho \"更新后路径`pwd`\"\n\nif [ -f $plistPath ];then\n#移除文件\nrm -f $plistPath\nfi\n\n\n\n\n\n\nif [ \"${CONFIGURATION}\" = \"Release\" ];then\necho \"当前为Release模式\"\n/usr/libexec/PlistBuddy -c 'Add :Version string 1.0' $plistPath\n/usr/libexec/PlistBuddy -c 'Delete :Version' $plistPath\n\nelse\nfor file in $(ls)\ndo\nif [[ $file == DG* ]];then\ncd $file\ncurrentBranch=$(git branch | cut -d' ' -f 2 | tr -d \"\\n\")\necho \"仓库名称key=$file 仓库分支value=$currentBranch\"\n/usr/libexec/PlistBuddy -c \"Add :$file string $currentBranch\" $plistPath\ncd ..\nfi\n\n\ndone\nfi\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+			shellScript = "#!/bin/bash\n#获取各个仓库的分支名称\n#2018.6.19\n\n#这里拿到的是当前工程的路径\nprojectPath=`pwd`\nplistPath=$projectPath/ScanTest/BranchList.plist\necho \"工程路径$projectPath\"\necho \"文件路径$plistPath\"\ncd ../..\necho \"更新后路径`pwd`\"\n\nif [ -f $plistPath ];then\n#移除文件\nrm -f $plistPath\nfi\n\n\n\n\n\n\nif [ \"${CONFIGURATION}\" = \"Release\" ];then\necho \"当前为Release模式\"\n/usr/libexec/PlistBuddy -c 'Add :Version string 1.0' $plistPath\n/usr/libexec/PlistBuddy -c 'Delete :Version' $plistPath\n\nelse\nfor file in $(ls)\ndo\nif [[ $file == DG* ]];then\ncd $file\ncurrentBranch=$(git branch | cut -d' ' -f 2 | tr -d \"\\n\")\necho \"仓库名称key=$file 仓库分支value=$currentBranch\"\n/usr/libexec/PlistBuddy -c \"Add :$file string $currentBranch\" $plistPath\ncd ..\nfi\n\n\ndone\nfi\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
