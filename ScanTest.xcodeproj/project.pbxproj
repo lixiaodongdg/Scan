@@ -284,7 +284,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#!/bin/bash\n#获取各个仓库的分支名称\n#2018.6.19\n\n#这里拿到的是当前工程的路径\nprojectPath=`pwd`\nplistPath=$projectPath/ScanTest/BranchList.plist\necho \"工程路径$projectPath\"\necho \"文件路径$plistPath\"\ncd ../..\necho \"更新后路径`pwd`\"\n\nif [ -f $plistPath ];then\n#移除文件\nrm -f $plistPath\nfi\n\n\n\n\n\n\nif [ \"${CONFIGURATION}\" = \"Release\" ];then\necho \"当前为Release模式\"\n/usr/libexec/PlistBuddy -c 'Add :Version string 1.0' $plistPath\n/usr/libexec/PlistBuddy -c 'Delete :Version' $plistPath\n\nelse\nfor file in $(ls)\ndo\nif [[ $file == DG* ]];then\ncd $file\ncurrentBranch=$(git branch | cut -d' ' -f 2 | tr -d \"\\n\")\necho \"仓库名称key=$file 仓库分支value=$currentBranch\"\n/usr/libexec/PlistBuddy -c \"Add :$file string $currentBranch\" $plistPath\ncd ..\nfi\n\n\ndone\nfi\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+			shellScript = "#!/bin/bash\n#获取各个仓库的分支名称\n#2018.6.19\n\n#这里拿到的是当前工程的路径\nprojectPath=`pwd`\nplistPath=$projectPath/ScanTest/ABranchList.plist\necho \"工程路径$projectPath\"\necho \"文件路径$plistPath\"\ncd ../..\necho \"更新后路径`pwd`\"\n\nif [ -f $plistPath ];then\n#移除文件\nrm -f $plistPath\nfi\n\n\n\n\n\n\nif [ \"${CONFIGURATION}\" = \"Release\" ];then\necho \"当前为Release模式\"\n/usr/libexec/PlistBuddy -c 'Add :Version string 1.0' $plistPath\n/usr/libexec/PlistBuddy -c 'Delete :Version' $plistPath\n\nelse\nfor file in $(ls)\ndo\nif [[ $file == DG* ]];then\ncd $file\ncurrentBranch=$(git branch | cut -d' ' -f 2 | tr -d \"\\n\")\necho \"仓库名称key=$file 仓库分支value=$currentBranch\"\n/usr/libexec/PlistBuddy -c \"Add :$file string $currentBranch\" $plistPath\ncd ..\nfi\n\n\ndone\nfi\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
