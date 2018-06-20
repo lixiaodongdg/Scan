@@ -16,8 +16,6 @@
 		E52B3FF91E7A78CB00320223 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E52B3FF71E7A78CB00320223 /* LaunchScreen.storyboard */; };
 		E553F99E1E7A944C0071F9D2 /* ScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E553F99D1E7A944C0071F9D2 /* ScanViewController.m */; };
 		E55E300C1E8F97E8000B26E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E55E300B1E8F97E8000B26E9 /* Assets.xcassets */; };
-		E57A698620D93255003E7506 /* BranchList.plist in Resources */ = {isa = PBXBuildFile; fileRef = E57A698420D9316F003E7506 /* BranchList.plist */; };
-		E585CB7E20DA4E910089F2B7 /* ABranchList.plist in Resources */ = {isa = PBXBuildFile; fileRef = E585CB7D20DA4E900089F2B7 /* ABranchList.plist */; };
 		E5B2EFF71EB8C0ED00230C0B /* Scan.gif in Resources */ = {isa = PBXBuildFile; fileRef = E5B2EFF61EB8C0ED00230C0B /* Scan.gif */; };
 		E5E77EB11E80EE0000EDE92A /* ScanView.m in Sources */ = {isa = PBXBuildFile; fileRef = E5E77EB01E80EE0000EDE92A /* ScanView.m */; };
 		E5E873741E8262890068B2A9 /* PhotoShowCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5E873731E8262890068B2A9 /* PhotoShowCollectionViewCell.m */; };
@@ -41,9 +39,7 @@
 		E553F99C1E7A944C0071F9D2 /* ScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanViewController.h; sourceTree = "<group>"; };
 		E553F99D1E7A944C0071F9D2 /* ScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanViewController.m; sourceTree = "<group>"; };
 		E55E300B1E8F97E8000B26E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E57A698420D9316F003E7506 /* BranchList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BranchList.plist; sourceTree = "<group>"; };
 		E584C3831E80D39F0083E8A3 /* ScanTestUIConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScanTestUIConfig.h; sourceTree = "<group>"; };
-		E585CB7D20DA4E900089F2B7 /* ABranchList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ABranchList.plist; sourceTree = "<group>"; };
 		E5B2EFF61EB8C0ED00230C0B /* Scan.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Scan.gif; sourceTree = "<group>"; };
 		E5E77EAF1E80EE0000EDE92A /* ScanView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanView.h; sourceTree = "<group>"; };
 		E5E77EB01E80EE0000EDE92A /* ScanView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanView.m; sourceTree = "<group>"; };
@@ -100,8 +96,6 @@
 				E52B3FF21E7A78CB00320223 /* Main.storyboard */,
 				E52B3FF71E7A78CB00320223 /* LaunchScreen.storyboard */,
 				E52B3FFA1E7A78CB00320223 /* Info.plist */,
-				E585CB7D20DA4E900089F2B7 /* ABranchList.plist */,
-				E57A698420D9316F003E7506 /* BranchList.plist */,
 				E52C900C1EB74A11004734E7 /* Scan */,
 				E55E300B1E8F97E8000B26E9 /* Assets.xcassets */,
 				E52B3FE91E7A78CB00320223 /* Supporting Files */,
@@ -244,10 +238,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E52B3FF91E7A78CB00320223 /* LaunchScreen.storyboard in Resources */,
-				E57A698620D93255003E7506 /* BranchList.plist in Resources */,
 				E5B2EFF71EB8C0ED00230C0B /* Scan.gif in Resources */,
 				E55E300C1E8F97E8000B26E9 /* Assets.xcassets in Resources */,
-				E585CB7E20DA4E910089F2B7 /* ABranchList.plist in Resources */,
 				E52B3FF41E7A78CB00320223 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
